@@ -1,11 +1,29 @@
 <h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1>
 <div id="container">
-<h1>Pesquisa por palavra chave</h1><br>
 
 <% form_tag textos_path, :method => 'get' do  %>
-  <p>
-    <%= text_field_tag :search, params[:search]%><br><br><%= submit_tag "Pesquisar", :texto => "Digite a palavra chave" , :class => 'awesome large black button'%> 
-  </p>
+ 
+<table width="60%">
+	<tr>
+
+<td height="40px"width="50%">Testamento<br><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
+
+</tr>
+<tr>
+<td height="50px"width="50%">Livro<br> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
+
+	</tr>
+	<tr>
+		<td height="50px">Passagem<br> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
+	</tr>
+	
+	<tr>
+		<td height="50px">Palavra chave<br><%= text_field_tag :search, params[:search], :size => 50%></td>
+	</tr>
+	<tr>
+		<td align="right" height="50px"><%= submit_tag "Pesquisar"%> </td>
+	</tr>
+</table>
 <% end %>
 <br><br>
 <div class="flickr_pagination">

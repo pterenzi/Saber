@@ -6,8 +6,7 @@ class Texto < ActiveRecord::Base
   def self.search(search, page)
     paginate :per_page => 50, :page => page,
              :conditions => ['texto like ?', "%#{search}%"],
-             :order => 'id'
-             
+             :order => 'id'           
   end
-  
+
 end

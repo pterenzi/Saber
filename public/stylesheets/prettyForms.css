@@ -1,0 +1,241 @@
+/*******************
+Author: Patrick Ryan
+URL: http://www.agavegroup.com
+
+Feel free to use this however you like.  Credit is always appreciated.
+*******************/
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	color:#2e3436;
+	outline:none;
+	font-size:16px;
+	background:#FFF;
+	text-align:justify;
+}
+
+td.texto {
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	color:#2e3436;
+	outline:none;
+	font-size:16px;
+	padding:10px;
+	border:0px;
+	text-align:justify;
+}
+td.numero {
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	color:#2e3436;
+	outline:none;
+	font-size:12px;
+	border:0px;
+	text-align:right;
+	vertical-align:top;
+	padding-top:14px;
+}
+img {
+	border:0;
+}
+h1 {
+	background-color: #b80000;
+	height:40px;
+	color: white;
+	padding:10px;
+	text-shadow:-1px -1px -1px gray;
+	text-align:center;
+}
+
+
+h2 {
+	border-top: 1px solid #8b0000;
+	color: #8b0000;
+	text-shadow:1px 1px 1px gray;
+	}
+h3 {
+		text-shadow:-1px -1px -1px gray;
+}
+
+
+tr.even {
+	background: #F0F0F0;
+}
+
+tr.odd {
+	background: #fff;
+}
+#numeros {
+	font-size:9px;
+}
+
+#container {
+	padding:20px;
+	width:60%;
+	margin-left:20%;
+}
+
+#numeracao {
+	width: 7%;
+	text-align:left;
+	vertical-align:top;
+}
+
+#texto {
+	width: 93%;
+	float: right ;
+}
+
+input, textarea, select{
+	border:0;
+	margin:3px;
+	padding:0px 3px;
+	font:90%/180% "Trebuchet MS", "Lucida Grande", "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
+	color:#666666;
+
+}
+
+label{
+	float:left;
+	margin:5px;
+	width:100px;
+	display:block;
+}
+
+.clearAll{
+	clear:both;
+}
+
+/***** Shadows that wrap around ALL elements ***********/
+.frmShdwTopLt{
+	float:left;
+	background:url(/images/shadowUpperLeft.gif) top left no-repeat;
+}
+
+.frmShdwBottomRt{
+	float:left;
+	background:url(/images/shadowLowerRight.gif) bottom right no-repeat;
+}
+
+.frmShdwBottomLt{
+	float:left;
+	background:transparent url(/images/shadowBottomLeft.gif) bottom left no-repeat;
+}
+
+.frmShdwTopRt{
+	float:left;
+	background:transparent url(/images/shadowTopRight.gif) top right no-repeat;
+}
+
+
+/***** styles specific to the CHECKBOX **********/
+.frmShdwCheck{
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+	.frmShdwCheck img{
+		border:0;
+		margin:0;
+	}
+
+	
+/***** styles specific to the RADIO BUTTONS **********/
+.frmShdwRadio{
+	float:left;
+	margin:0;
+}
+
+	.frmShdwRadio img{
+		border:0;
+		margin:0;
+	}
+
+	
+/***** styles specific to the SUBMIT BUTTONS **********/
+.frmShdwSubmit{
+	border:0;
+	background:#f7f7f7 !important;
+	background:transparent;
+	float:left;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+	.frmShdwSubmit:hover{
+		color:#000000;
+	}
+	
+
+/***** styles specific to the SELECT BOX **********/
+.frmShdwSelectDropChosen{
+	margin:3px 3px 3px 5px;
+	padding: 0 0 0 2px !important;
+	padding: 0 0 3px 2px;
+	font-size:.9em;
+	float:left;
+	border-right:1px solid #cccccc;
+	border-left:1px solid #ffffff !important;
+	border-left:0;
+	display:block;
+	cursor:pointer;
+	/*some stuff for IE*/
+	color:#666666;
+	text-decoration:none;
+}
+
+.frmShdwSelectDropShown{
+	margin:3px 3px 3px 5px;
+	padding: 0 0 0 2px;
+	font-size:.9em;
+	float:left;
+	border-right:1px solid #cccccc;
+	border-left:1px solid #cccccc;
+	border-bottom:1px solid #cccccc;
+	position:absolute;
+	background:#ffffff;
+}
+
+.frmShdwSelectDrop{
+	display:none;
+}
+
+.fakeSelectImg{
+	border:0;
+	margin:5px 5px 0px 0px;
+}
+
+.frmShdwSelectDropShown a{
+	display:block;
+	margin:0;
+	padding:0px;
+	border-bottom:1px dashed #ffffff;
+	text-decoration:none;
+	color:#666666;
+}
+	
+	.frmShdwSelectDropShown a.selected{
+		background:#f7f7f7;
+		color:#000000;
+		border-bottom:1px dashed #cccccc;
+	}
+	
+	.frmShdwSelectDropShown a.selected:after{
+		content:" <<";
+	}
+	
+	
+	.frmShdwSelectDropShown a:hover{
+		background:#f7f7f7;
+		border-bottom:1px dashed #cccccc;
+		text-decoration:none;
+		color:#666666;
+	}
+	
+	.frmShdwSelectDropShown a:hover:after{
+		content:" <<";
+	}
+	
+	

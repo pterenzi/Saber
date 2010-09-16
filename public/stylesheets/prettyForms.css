@@ -74,6 +74,7 @@ tr.odd {
 	padding:20px;
 	width:60%;
 	margin-left:20%;
+	margin-top:97px;
 }
 
 #numeracao {
@@ -83,8 +84,22 @@ tr.odd {
 }
 
 #texto {
-	width: 93%;
+	width: 100%;
 	float: right ;
+}
+
+#formulario {
+	width:100%;
+	float:center;
+	border-bottom:1px solid #b80000;
+	padding:8px;
+}
+#topo {
+	top:0;
+	width:100%;
+	position:fixed;
+	background-color:white;
+	
 }
 
 input, textarea, select{
@@ -165,7 +180,7 @@ label{
 }
 
 	.frmShdwSubmit:hover{
-		color:#000000;
+		color:#8b0000;
 	}
 	
 

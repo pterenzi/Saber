@@ -13,14 +13,40 @@
 <%= javascript_include_tag "jquery.suggest.js" %>
 <%= stylesheet_link_tag 'paginate' %>
 <%= javascript_include_tag 'prettyForms.js' %>
+<%= javascript_include_tag 'jquery.corner.js' %>
+<script type="text/javascript">
 
+$('#formulario').corner("20");
+
+</script>
 
 </head>
 <body onload="prettyForms()">
+	<div id="topo">
+	<h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1>
 
+	<div id="formulario">
+	<% form_tag textos_path, :method => 'get' do  %>
+
+	<table width="100%">
+		<tr>
+			<td><h3>Testamento</h3><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
+			<td><h3>Livro</h3> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
+			<td><h3>Passagem</h3> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
+			<td><h3>Palavra chave</h3><%= text_field_tag :search, params[:search], :size => 30%></td>
+			<td><br><%= submit_tag "Pesquisar"%> </td>
+		</tr>
+
+	</table>
+	<% end %>
+	</div>
+
+	</div>
 <p style="color: red"><%= flash[:notice] %></p>
 
 <%= yield %>
-
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<h1>Passagens</h1>
+
+<table>
+  <tr>
+    <th>Livro</th>
+    <th>Capítulo inicial</th>
+    <th>Versículo iniicial</th>
+    <th>Capítulo final</th>
+    <th>Versículo final</th>
+    <th>Título</th>
+  </tr>
+
+<% @pericopes.each do |pericope| %>
+  <tr>
+    <td><%=h pericope.livro_id %></td>
+    <td><%=h pericope.cap_inicial %></td>
+    <td><%=h pericope.ver_ini %></td>
+    <td><%=h pericope.cap_final %></td>
+    <td><%=h pericope.ver_final %></td>
+    <td><%=h pericope.titulo %></td>
+    <td><%= link_to 'Show', pericope %></td>
+    <td><%= link_to 'Edit', edit_pericope_path(pericope) %></td>
+    <td><%= link_to 'Destroy', pericope, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

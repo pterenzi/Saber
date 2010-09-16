@@ -1,0 +1,40 @@
+<div id="container">
+<h1>SABER</h1><br>
+<h1>Pesquisa por palavra chave</h1>
+<% form_tag textos_path, :method => 'get' do %><br>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Pesquisar", :texto => nil , :class => 'awesome large black button'%> 
+  </p><br>
+<% end %>
+
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div><p>
+
+
+
+<% testamento_anterior = '' %>
+<% livro_anterior = '' %>
+<% @textos.each do |texto| %>
+  <% if texto.testamento.nome != testamento_anterior %> 
+ <br><h1> <%=h texto.testamento.nome %> Testamento<br> </h1>
+    <% testamento_anterior = texto.testamento.nome %>
+   <% end %>
+   <% if livro_anterior != texto.livro.nome %>
+    <br> <h2> <%= texto.livro.nome %></h2>
+     <% livro_anterior = texto.livro.nome %>
+  <% end %>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tr class="<%= cycle("even", "odd") %>">
+<td class="numero" width="38px"><%=h texto.capitulo %>:<%=h texto.versiculo %></td> <td class="texto" width="700px"> <%=h texto.texto %></td><!--><td><%= link_to 'Show', texto %></td>-->
+</tr>
+</table>
+<% end %>
+
+
+<br />
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div>
+</div>

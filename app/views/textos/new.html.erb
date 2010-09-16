@@ -1,0 +1,27 @@
+<h1>New texto</h1>
+
+<% form_for(@texto) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :livro_id %><br />
+    <%= f.text_field :livro_id %>
+  </p>
+  <p>
+    <%= f.label :pericope_id %><br />
+    <%= f.text_field :pericope_id %>
+  </p>
+  <p>
+    <%= f.label :capitulo %><br />
+    <%= f.text_field :capitulo %>
+  </p>
+  <p>
+    <%= f.label :versiculo %><br />
+    <%= f.text_field :versiculo %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', textos_path %>

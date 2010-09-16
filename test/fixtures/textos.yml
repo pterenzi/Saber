@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  livro_id: 1
+  pericope_id: 1
+  capitulo: 1
+  versiculo: 1
+
+two:
+  livro_id: 1
+  pericope_id: 1
+  capitulo: 1
+  versiculo: 1

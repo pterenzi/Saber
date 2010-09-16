@@ -1,0 +1,18 @@
+<p>
+    <%=h @texto.testamento.nome %> testamento
+</p>
+
+<p>
+  <%=h @texto.pericope.titulo %>
+</p>
+
+<p>
+  <%=h @texto.livro.nome %> 
+  <%=h @texto.capitulo %>:<%=h @texto.versiculo %>
+</p>
+<%=h @texto.texto %>
+
+
+
+<%= link_to 'Edit', edit_texto_path(@texto) %> |
+<%= link_to 'Back', textos_path %>

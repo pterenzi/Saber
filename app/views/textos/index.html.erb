@@ -1,13 +1,13 @@
+<h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1>
 <div id="container">
-<h1>SABER</h1><br>
-<h1>Pesquisa por palavra chave</h1>
-<% form_tag textos_path, :method => 'get' do %><br>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Pesquisar", :texto => nil , :class => 'awesome large black button'%> 
-  </p><br>
-<% end %>
+<h1>Pesquisa por palavra chave</h1><br>
 
+<% form_tag textos_path, :method => 'get' do  %>
+  <p>
+    <%= text_field_tag :search, params[:search]%><br><br><%= submit_tag "Pesquisar", :texto => "Digite a palavra chave" , :class => 'awesome large black button'%> 
+  </p>
+<% end %>
+<br><br>
 <div class="flickr_pagination">
 <%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
 </div><p>
@@ -18,11 +18,11 @@
 <% livro_anterior = '' %>
 <% @textos.each do |texto| %>
   <% if texto.testamento.nome != testamento_anterior %> 
- <br><h1> <%=h texto.testamento.nome %> Testamento<br> </h1>
+ <br><h2> <%=h texto.testamento.nome %> Testamento<br> </h2>
     <% testamento_anterior = texto.testamento.nome %>
    <% end %>
    <% if livro_anterior != texto.livro.nome %>
-    <br> <h2> <%= texto.livro.nome %></h2>
+    <br> <h3> <%= texto.livro.nome %></h3>
      <% livro_anterior = texto.livro.nome %>
   <% end %>
 <table cellspacing="0" cellpadding="0" border="0">

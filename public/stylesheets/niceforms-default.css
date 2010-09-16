@@ -1,22 +1,20 @@
 /*##########################################
-Name: Default styling for Niceforms v.0.9
+Name: Default styling for Niceforms v.1.0
 Author: Lucian Slatineanu
 URL: http://www.badboy.ro/
 ##########################################*/
 
-/*General styles not really related to the forms*/
+/*General styles - NOT really related to the forms*/
 * {
 	margin:0;
 	padding:0;
 }
 body {
-	width:60%;
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color:#2e3436;
 	outline:none;
 	font-size:16px;
 	background:#FFF;
-	margin-left:20%;
 	text-align:justify;
 }
 
@@ -48,7 +46,9 @@ h1 {
 	color: white;
 	padding:10px;
 	text-shadow:-1px -1px -1px gray;
-	}
+	text-align:center;
+}
+
 
 h2 {
 	border-top: 1px solid #8b0000;
@@ -56,6 +56,11 @@ h2 {
 	text-shadow:1px 1px 1px gray;
 	padding:5px;
 	}
+h3 {
+		text-shadow:-1px -1px -1px gray;
+}
+
+
 tr.even {
 	background: #F0F0F0;
 }
@@ -69,6 +74,8 @@ tr.odd {
 
 #container {
 	padding:20px;
+	width:60%;
+	margin-left:20%;
 }
 
 #numeracao {
@@ -82,94 +89,92 @@ tr.odd {
 	float: right ;
 
 }
-
-/*Forms defaults*/
+/*Forms defaults - change as needed*/
 input, textarea {
 	font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+	font-size:16px;
 	color:#404040;
 }
 label {
 	color:#999;
 	cursor:pointer;
 	padding-left:2px;
-	line-height:15px;
-	vertical-align:top;
+	line-height:16px;
 }
-label.chosen {
-	color:#333;
-}
+label.chosen {color:#333;}
 
 /*Transparent items*/
-.transparent {
-	filter:alpha(opacity=0);
-	-moz-opacity:0;
-	opacity: 0;
-	border:0px solid #FFF;
-	background:#FFF;
-	z-index:10;
-	cursor:pointer;
-}
-.transparentFake {
-	background:none;
-	border:none;
-}
-.transparent2 {
-	z-index:10;
+.outtaHere {
+	position:absolute;
+	left:-3000px;
 }
 
 /*Radio buttons*/
-.radioAreaUnchecked, .radioAreaChecked {
-	z-index:5;
-	position:absolute;
+.radioArea, .radioAreaChecked {
+	display:block;
+	float:left;
+	clear:left;
 	width:15px;
-	height:15px;
+	height:14px;
+	font-size:0;
 	cursor:pointer;
 }
-.radioAreaUnchecked {
-	background:url(images/radio.gif) no-repeat left top;
-}
-.radioAreaChecked {
-	background:url(images/radio.gif) no-repeat left bottom;
-}
+.radioArea {background:url(images/radio.gif) no-repeat left top;}
+.radioAreaChecked {background:url(images/radio.gif) no-repeat left bottom;}
 
 /*Checkboxes*/
-.checkboxAreaUnchecked, .checkboxAreaChecked {
-	z-index:5;
-	position:absolute;
-	width:14px;
-	height:14px;
+.checkboxArea, .checkboxAreaChecked {
+	display:block;
+	float:left;
+	clear:left;
+	width:13px;
+	height:13px;
+	font-size:0;
+	padding:0;
+	margin:0;
 	cursor:pointer;
 }
-.checkboxAreaUnchecked {
-	background:url(images/checkbox.gif) no-repeat left top;
-}
-.checkboxAreaChecked {
-	background:url(images/checkbox.gif) no-repeat left bottom;
-}
+.checkboxArea {background:url(images/checkbox.gif) no-repeat left top;}
+.checkboxAreaChecked {background:url(images/checkbox.gif) no-repeat left bottom;}
+.focused {border:1px dotted #ddd;}
 
 /*Text inputs*/
 .textinput, .textinputHovered {
-	width:236px;
 	height:15px;
-	background:url(images/input.gif) no-repeat left top;
+	background:url(images/input_bg.gif) repeat-x left top;
 	border:none;
-	padding:4px 8px;
+	padding:4px 0;
+	vertical-align:middle;
 }
-.textinputHovered {
-	background-position:left bottom;
+.textinputHovered {background-position:left bottom;}
+.inputCorner {
+	padding-bottom:0;
+	vertical-align:middle;
 }
 
 /*Text areas*/
-.textarea, .textareaHovered {
-	width:336px;
-	height:125px;
-	background:url(images/textarea.gif) no-repeat left top;
-	border:none;
-	padding:4px 8px;
+.txtarea .tr, .txtarea .tr_xon {background:url(images/txtarea_tr.gif) no-repeat top right;}
+.txtarea .tr_xon {background:url(images/txtarea_tr_xon.gif) no-repeat top right;}
+.txtarea img.txt_corner {
+	width:5px;
+	height:5px;
+	display:block;
 }
-.textareaHovered {
-	background-position:left bottom;
+.txtarea .br, .txtarea .br_xon {background:url(images/txtarea_br.gif) no-repeat top right;}
+.txtarea .br_xon {background:url(images/txtarea_br_xon.gif) no-repeat top right;}
+.txtarea .cntr {background:url(images/txtarea_cntr.gif) repeat-y right top;}
+.txtarea .cntr_xon {background:url(images/txtarea_cntr_xon.gif) repeat-y right top;}
+.txtarea .cntr_l, .txtarea .cntr_l_xon {
+	width:5px;
+	background:url(images/txtarea_l.gif) repeat-y left top;
+	float:left;
+}
+.txtarea .cntr_l_xon {background:url(images/txtarea_l_xon.gif) repeat-y left top;}
+.txtarea textarea {
+	border:0;
+	background:none;
+	padding:0;
+	margin:5px;
 }
 
 /*Selects*/
@@ -192,18 +197,18 @@ label.chosen {
 }
 .selectArea .right a {
 	display:block;
-	width:21px;
+	width:200px;
 	height:21px;
+	margin-left:-179px;
+	position:absolute;
 }
-.selectArea .right i {
-	display:none;
-}
+.selectArea .right i {display:none;}
 .selectArea .center {
 	width:160px;
-	margin-left:5px;
-	margin-right:20px;
 	color:#FFF;
 	padding-top:3px;
+	overflow:hidden;
+	white-space:nowrap;
 }
 
 /*Selects drop-down*/
@@ -217,12 +222,8 @@ label.chosen {
 	font-size:11px;
 	z-index:20;
 }
-.optionsDivInvisible {
-	display:none;
-}
-.optionsDivVisible {
-	display:block;
-}
+.optionsDivInvisible {display:none;}
+.optionsDivVisible {display:block;}
 .optionsDivVisible p {
 	margin:0;
 	padding:0;
@@ -242,23 +243,14 @@ label.chosen {
 
 /*Button*/
 .buttonSubmit, .buttonSubmitHovered {
-	width:69px;
+	width:auto;
 	height:26px;
 	color:#FFF;
 	font-weight:bold;
-	padding:2px 5px;
-	background:url(images/button.gif) no-repeat left top;
+	padding:2px;
+	background:url(images/button_bg.gif) repeat-x left top;
 	cursor:pointer;
 	border:none;
 }
-.buttonSubmitHovered {
-	background-position:left bottom;
-}
-
-/*Test div - testing if stylesheets are enabled*/
-#stylesheetTest {
-	position:absolute;
-	left:-999px;
-	width:10px;
-	height:10px;
-}
+.buttonSubmitHovered {background-position:left bottom;}
+.buttonImg {vertical-align:bottom;}

@@ -3,7 +3,7 @@
 <% livro_anterior = '' %>
 <% @textos.each do |texto| %>
   <% if texto.testamento.nome != testamento_anterior %> 
- <br><h2> <%=h texto.testamento.nome %> Testamento<br> </h2>
+ <br><h2> <%=h texto.testamento.nome %> Testamento</h2>
     <% testamento_anterior = texto.testamento.nome %>
    <% end %>
    <% if livro_anterior != texto.livro.nome %>

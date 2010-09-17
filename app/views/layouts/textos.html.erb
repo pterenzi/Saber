@@ -16,7 +16,6 @@
 <%= javascript_include_tag 'jquery.corner.js' %>
 <script type="text/javascript">
 
-$('#formulario').corner("20");
 
 </script>
 
@@ -28,12 +27,12 @@ $('#formulario').corner("20");
 	<div id="formulario">
 	<% form_tag textos_path, :method => 'get' do  %>
 
-	<table width="100%">
+	<table width="80%">
 		<tr>
-			<td><h3>Testamento</h3><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
-			<td><h3>Livro</h3> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
-			<td><h3>Passagem</h3> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
-			<td><h3>Palavra chave</h3><%= text_field_tag :search, params[:search], :size => 30%></td>
+			<td><h5>Testamento</h5><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
+			<td><h5>Livro</h5> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
+			<td><h5>Passagem</h5> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
+			<td><h5>Palavra chave</h5><%= text_field_tag :search, params[:search], :size => 30%></td>
 			<td><br><%= submit_tag "Pesquisar"%> </td>
 		</tr>
 

@@ -40,22 +40,22 @@ img {
 	border:0;
 }
 h1 {
-	background-color: #b80000;
-	height:40px;
+	background-color: #8B1A1A;
 	color: white;
-	padding:10px;
 	text-shadow:-1px -1px -1px gray;
 	text-align:center;
+	letter-spacing:-2px;
 }
 
 
 h2 {
-	border-top: 1px solid #8b0000;
-	color: #8b0000;
+	border-top: 1px solid #8B1A1A;
+	color: #8B1A1A;
 	text-shadow:1px 1px 1px gray;
 	}
 h3 {
-		text-shadow:-1px -1px -1px gray;
+		text-shadow:1px 1px 1px gray;
+		padding:0;
 }
 
 
@@ -74,7 +74,7 @@ tr.odd {
 	padding:20px;
 	width:60%;
 	margin-left:20%;
-	margin-top:97px;
+	margin-top:76px;
 }
 
 #numeracao {
@@ -91,7 +91,7 @@ tr.odd {
 #formulario {
 	width:100%;
 	float:center;
-	border-bottom:1px solid #b80000;
+	border-bottom:1px solid black;
 	padding:8px;
 }
 #topo {
@@ -180,7 +180,7 @@ label{
 }
 
 	.frmShdwSubmit:hover{
-		color:#8b0000;
+		color:#8B1A1A;
 	}
 	
 

@@ -8,9 +8,7 @@
 
 <%= stylesheet_link_tag 'awesome-buttons' %>
 <%= stylesheet_link_tag 'prettyForms' %>
-<%= stylesheet_link_tag 'jquery.suggest.css' %>
 <%= javascript_include_tag :defaults %>
-<%= javascript_include_tag "jquery.suggest.js" %>
 <%= stylesheet_link_tag 'paginate' %>
 <%= javascript_include_tag 'prettyForms.js' %>
 <%= javascript_include_tag 'jquery.corner.js' %>
@@ -27,10 +25,12 @@
 	<div id="formulario">
 	<% form_tag textos_path, :method => 'get' do  %>
 
-	<table width="80%">
+	<table width="100%">
 		<tr>
 			<td><h5>Testamento</h5><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
 			<td><h5>Livro</h5> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
+			<td><h5>Capítulo</h5><%= text_field_tag :search, params[:search], :size => 5%></td>
+			<td><h5>Versículo</h5><%= text_field_tag :search, params[:search], :size => 5%></td>
 			<td><h5>Passagem</h5> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
 			<td><h5>Palavra chave</h5><%= text_field_tag :search, params[:search], :size => 30%></td>
 			<td><br><%= submit_tag "Pesquisar"%> </td>

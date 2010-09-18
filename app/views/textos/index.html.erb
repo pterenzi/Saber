@@ -7,17 +7,19 @@
     <% testamento_anterior = texto.testamento.nome %>
    <% end %>
    <% if livro_anterior != texto.livro.nome %>
-    <br> <h3> <%= texto.livro.nome %></h3>
+     <h3> <%= tooltip (link_to texto.livro.nome, texto), { :tooltip => 'Clique para ler o livro.' }, :class => 'mytooltip'%> </h3>
      <% livro_anterior = texto.livro.nome %>
   <% end %>
 <table cellspacing="0" cellpadding="0" border="0">
 	<tr class="<%= cycle("even", "odd") %>">
-<td class="numero" width="38px"><%=h texto.capitulo %>:<%=h texto.versiculo %></td> <td class="texto" width="700px"> <%=h texto.texto %></td>
+<td class="numero" width="38px"><%= tooltip (link_to texto.capitulo, texto), { :tooltip => 'Clique para ler o capítulo inteiro.' }, :class => 'mytooltip'%>:<%=h texto.versiculo %></td> <td class="texto" width="700px"> <%= link_to texto.texto, texto  %></td>
 </tr>
 </table>
 <% end %>
 
-
 <br />
 
+</div>
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
 </div>

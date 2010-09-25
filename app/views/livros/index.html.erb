@@ -1,20 +1,19 @@
 <h1>Livros</h1>
+<div id="container">
+<% testamento_anterior = '' %>
 
-<table>
-  <tr>
-    <th>Testamento</th>
-    <th>Nome</th>
-  </tr>
 
 <% @livros.each do |livro| %>
-  <tr>
-    <td><%=h livro.testamento.nome %></td>
+ <% if livro.testamento.nome != testamento_anterior %> 
+<br><h2> <%=h livro.testamento.nome %> Testamento</h2>
+   <% testamento_anterior = livro.testamento.nome %>
+  <% end %>
+<table>
+<tr>
     <td><%=h livro.nome %></td>
-    <td><%= link_to 'Show', livro %></td>
-    <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
-    <td><%= link_to 'Destroy', livro, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
 <% end %>
-</table>
+  </tr>
 
+</table>
+</div>
 <br />

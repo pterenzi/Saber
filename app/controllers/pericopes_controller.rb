@@ -1,9 +1,10 @@
 class PericopesController < ApplicationController
   # GET /pericopes
   # GET /pericopes.xml
+  layout "application"
+  
   def index
-    @pericopes = Pericope.all
-
+    @pericopes = Pericope.search(params[:search], params[:pericope], params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pericopes }

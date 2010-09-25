@@ -1,6 +1,7 @@
 class LivrosController < ApplicationController
   # GET /livros
   # GET /livros.xml
+  layout "application"
   def index
     @livros = Livro.all
 

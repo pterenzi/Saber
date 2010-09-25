@@ -1,28 +1,33 @@
-<h1>Passagens</h1>
+<h1>Passagens</h1>	
+<div id="container">
+	<% testamento_anterior = '' %>
+	<% livro_anterior = '' %>
+	<% @pericopes.each do |pericope| %>
+	  <% if pericope.testamento.nome != testamento_anterior %> 
+	 <br><h2> <%=pericope.testamento.nome %> Testamento</h2>
+	    <% testamento_anterior = pericope.testamento.nome %>
+	   <% end %>
+	   <% if livro_anterior != pericope.livro.nome %>
+	     <h3> <%= tooltip (link_to pericope.livro.nome, pericope), { :tooltip => 'Clique para ler o livro.' }, :class => 'mytooltip'%> </h3>
+	     <% livro_anterior = pericope.livro.nome %>
+	  <% end %>
 
-<table>
-  <tr>
-    <th>Livro</th>
-    <th>Capítulo inicial</th>
-    <th>Versículo iniicial</th>
-    <th>Capítulo final</th>
-    <th>Versículo final</th>
-    <th>Título</th>
-  </tr>
-
-<% @pericopes.each do |pericope| %>
-  <tr>
-    <td><%=h pericope.livro_id %></td>
-    <td><%=h pericope.cap_inicial %></td>
-    <td><%=h pericope.ver_ini %></td>
-    <td><%=h pericope.cap_final %></td>
-    <td><%=h pericope.ver_final %></td>
-    <td><%=h pericope.titulo %></td>
-    <td><%= link_to 'Show', pericope %></td>
+<table cellspacing="0" cellpadding="0" border="0">
+ <tr class="<%= cycle("even", "odd") %>">
+    <td class="numero" width="80px"><%= pericope.id%><br><%=h pericope.cap_inicial %>:<%=h pericope.ver_ini %> a <%=h pericope.cap_final %>:<%=h pericope.ver_final %></td>
+    <td class="texto"><%=h pericope.titulo %></td>
+<td class="ref"><%= tooltip (link_to pericope.referencia_1, pericope), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br>
+<%= tooltip (link_to pericope.referencia_2, pericope), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br> 
+<%= tooltip (link_to pericope.referencia_3, pericope), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br>
+<%= tooltip (link_to pericope.referencia_4, pericope), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> </td>
+<!--    <td><%= link_to 'Show', pericope %></td>
     <td><%= link_to 'Edit', edit_pericope_path(pericope) %></td>
-    <td><%= link_to 'Destroy', pericope, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', pericope, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
-<% end %>
 </table>
+<% end %>
+</div>
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div>
 
-<br />

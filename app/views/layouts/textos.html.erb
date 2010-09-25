@@ -13,9 +13,11 @@
 <%= stylesheet_link_tag 'paginate' %>
 <%= javascript_include_tag 'prettyForms.js' %>
 <%= javascript_include_tag 'jquery.corner.js' %>
+<%= javascript_include_tag 'jquery.js' %>
+<%= javascript_include_tag 'jquery-ui-1.8.4.custom.js' %>
+
 <script type="text/javascript">
-
-
+$('#formulario').corner("20");
 </script>
 
 </head>
@@ -28,23 +30,24 @@
 
 	<table width="100%">
 		<tr>
-			<td><h5>Testamento</h5><%=collection_select(:texto, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
-			<td><h5>Livro</h5> <%= collection_select(:texto, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
-			<td><h5>Capítulo</h5><%= text_field_tag :find_capitulo, params[:search], :size => 6%></td>
-			<td><h5>Versículo</h5><%= text_field_tag :find_versiculo, params[:search], :size => 6%></td>
-			<td><h5>Passagem</h5> <%= collection_select(:texto, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
+			<td><h5>Testamento</h5><%=collection_select(:testamento, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
+			<td><h5>Livro</h5> <%= collection_select(:livro, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
+			<td><h5>Capítulo</h5><%= text_field_tag :capitulo, params[:capitulo], :size => 6%></td>
+			<td><h5>Versículo</h5><%= text_field_tag :versiculo, params[:versiculo], :size => 6%></td>
+			<td><h5>Passagem</h5> <%= collection_select(:pericope, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"})%></td>
 			<td><h5>Palavra chave</h5><%= text_field_tag :search, params[:search], :size => 30%></td>
 			<td><br><%= submit_tag "Pesquisar"%> </td>
 		</tr>
-
 	</table>
 	<% end %>
 	</div>
-
 	</div>
 <p style="color: red"><%= flash[:notice] %></p>
 
 <%= yield %>
+<div class="flickr_pagination">
+<%= will_paginate @textos, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div>
 
 </body>
 </html>

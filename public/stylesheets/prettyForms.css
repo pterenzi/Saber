@@ -18,9 +18,8 @@ body {
 }
 
 .mytooltip {
-cursor: help;
-color: green;
-
+	cursor: help;
+	color: green;
 }
 
 a:link {
@@ -39,7 +38,7 @@ a:active {
 }
 
 a:hover {
-    color:#8B1A1A;
+    color:#7A1818;
     text-decoration:none;
 }
 
@@ -52,7 +51,9 @@ td.texto {
 	padding:10px;
 	border:0px;
 	text-align:justify;
+	width:600px;
 }
+
 td.numero {
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color:#2e3436;
@@ -60,14 +61,29 @@ td.numero {
 	font-size:12px;
 	border:0px;
 	text-align:right;
-	vertical-align:top;
-	padding-top:14px;
+	vertical-align:center;
 }
+
+
+
+td.ref {
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+	color:#2e3436;
+	outline:none;
+	font-size:12px;
+	border:0px;
+	text-align:left;
+	vertical-align:center;
+	width:75px;
+	padding:4px;
+}
+
 img {
 	border:0;
 }
+
 h1 {
-	background-color: #8B1A1A;
+	background-color: #7A1818;
 	color: white;
 	font-size:179%;
 	text-shadow:-1px -1px -1px gray;
@@ -75,24 +91,31 @@ h1 {
 	text-transform:uppercase;
 }
 
-
 h2 {
-	border-top: 1px solid #8B1A1A;
-	color: #8B1A1A;
+	color: #7A1818;
 	text-shadow:1px 1px 1px gray;
 	text-transform:uppercase;
 	font-size:350%;
 	letter-spacing:-5px;
-	}
-h3 {
-		text-shadow:1px 1px 1px gray;
-		padding:0;
-		font-size:200%;
-		text-transform:uppercase;
-		letter-spacing:-2px;
-		
 }
 
+h3 {
+	text-shadow:1px 1px 1px gray;
+	padding-top:15px;
+	font-size:200%;
+	text-transform:uppercase;
+	letter-spacing:-2px;
+		
+}
+h4 {
+	text-shadow:1px 1px 1px gray;
+	padding:0;
+	font-size:150%;
+	text-transform:uppercase;
+	letter-spacing:-2px;
+	color:#7A1818;
+		
+}
 
 tr.even {
 	background: #F0F0F0;
@@ -101,6 +124,7 @@ tr.even {
 tr.odd {
 	background: #fff;
 }
+
 #numeros {
 	font-size:9px;
 }
@@ -108,8 +132,27 @@ tr.odd {
 #container {
 	padding:20px;
 	width:60%;
-	margin-left:19%;
+	margin-left:20%;
 	margin-top:64px;
+}
+
+#esquerda {
+	width: 20%;
+	left:0;
+	top:90px;
+	position:fixed;
+	text-align:left;
+}
+
+#direita {
+	width: 20%;
+	right:10px;
+	top:90px;
+	position:fixed;
+	text-align:left;
+	padding:10px;
+	font-size:85%;
+	color:#696969
 }
 
 #numeracao {
@@ -128,22 +171,33 @@ tr.odd {
 	float:center;
 	border-bottom:1px solid black;
 	padding:8px;
+	background-color:white;	
 }
+
+
+
 #topo {
 	top:0;
 	width:100%;
 	position:fixed;
-	background-color:white;
-	
+	background-color:#7A1818;	
 }
 
-input, textarea, select{
+input, textarea{
 	border:0;
 	margin:3px;
 	padding:0px 3px;
 	font:90%/180% "Trebuchet MS", "Lucida Grande", "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
 	color:#666666;
+}
 
+select{
+	border:0;
+	margin:3px;
+	padding:0px 3px;
+	font:70%/140% "Trebuchet MS", "Lucida Grande", "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
+	color:#666666;
+	width:200px;
 }
 
 label{
@@ -186,10 +240,10 @@ label{
 	padding:0;
 }
 
-	.frmShdwCheck img{
-		border:0;
-		margin:0;
-	}
+.frmShdwCheck img{
+	border:0;
+	margin:0;
+}
 
 	
 /***** styles specific to the RADIO BUTTONS **********/
@@ -198,10 +252,10 @@ label{
 	margin:0;
 }
 
-	.frmShdwRadio img{
-		border:0;
-		margin:0;
-	}
+.frmShdwRadio img{
+	border:0;
+	margin:0;
+}
 
 	
 /***** styles specific to the SUBMIT BUTTONS **********/
@@ -214,9 +268,9 @@ label{
 	cursor:pointer;
 }
 
-	.frmShdwSubmit:hover{
-		color:#8B1A1A;
-	}
+.frmShdwSubmit:hover{
+	color:#7A1818;
+}
 	
 
 /***** styles specific to the SELECT BOX **********/
@@ -266,26 +320,24 @@ label{
 	color:#666666;
 }
 	
-	.frmShdwSelectDropShown a.selected{
-		background:#f7f7f7;
-		color:#000000;
-		border-bottom:1px dashed #cccccc;
+.frmShdwSelectDropShown a.selected{
+	background:#f7f7f7;
+	color:#000000;
+	border-bottom:1px dashed #cccccc;
 	}
 	
-	.frmShdwSelectDropShown a.selected:after{
-		content:" <<";
-	}
+.frmShdwSelectDropShown a.selected:after{
+	content:" <<";
+}
 	
 	
-	.frmShdwSelectDropShown a:hover{
-		background:#f7f7f7;
-		border-bottom:1px dashed #cccccc;
-		text-decoration:none;
-		color:#666666;
-	}
+.frmShdwSelectDropShown a:hover{
+	background:#f7f7f7;
+	border-bottom:1px dashed #cccccc;
+	text-decoration:none;
+	color:#666666;
+}
 	
-	.frmShdwSelectDropShown a:hover:after{
-		content:" <<";
-	}
-	
-	
+.frmShdwSelectDropShown a:hover:after{
+	content:" <<";
+}

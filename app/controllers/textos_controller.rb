@@ -1,6 +1,7 @@
 class TextosController < ApplicationController
   # GET /textos
   # GET /textos.xml
+  layout "application"
   def index
     @textos = Texto.search(params[:search], params[:page])
     respond_to do |format|

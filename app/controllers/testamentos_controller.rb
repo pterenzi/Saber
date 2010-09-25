@@ -1,6 +1,8 @@
 class TestamentosController < ApplicationController
   # GET /testamentos
   # GET /testamentos.xml
+  layout "application"
+  
   def index
     @testamentos = Testamento.all
 

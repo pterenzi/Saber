@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100905194043) do
+ActiveRecord::Schema.define(:version => 20100921043143) do
 
   create_table "livros", :force => true do |t|
     t.integer  "testamento_id"
@@ -19,12 +19,29 @@ ActiveRecord::Schema.define(:version => 20100905194043) do
   end
 
   create_table "pericopes", :force => true do |t|
+    t.integer  "testamento_id"
     t.integer  "livro_id"
     t.integer  "cap_inicial"
-    t.integer  "ver_ini"
     t.integer  "cap_final"
+    t.integer  "ver_ini"
     t.integer  "ver_final"
     t.string   "titulo"
+    t.string   "referencia_1"
+    t.string   "referencia_2"
+    t.string   "referencia_3"
+    t.string   "referencia_4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.integer  "testamento_id"
+    t.integer  "livro_id"
+    t.integer  "capitulo"
+    t.integer  "versiculo_ini"
+    t.integer  "versiculo_fin"
+    t.integer  "pericope_id"
+    t.text     "texto"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

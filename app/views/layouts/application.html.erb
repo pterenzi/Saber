@@ -26,20 +26,18 @@ $('#direita').corner("20");
 	<a href="http://localhost:3000"><h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1></a>
 
 	<div id="formulario">
-	<% form_tag textos_path, :method => 'get' do  %>
-
-	<table width="100%">
-		<tr>
-			<td><h5>Testamento</h5><%=collection_select(:testamento, :testamento_id, Testamento.all, :id, :nome, {:prompt => "Selecione"})%></td>
-			<td><h5>Livro</h5> <%= collection_select(:livro, :livro_id, Livro.all, :id, :nome, {:prompt => "Selecione"})%></td> 
-			<td><h5>Capítulo</h5><%= text_field_tag :capitulo, params[:capitulo], :size => 6%></td>
-			<td><h5>Versículo</h5><%= text_field_tag :versiculo, params[:versiculo], :size => 6%></td>
-			<td><h5>Passagem</h5> <%= collection_select(:pericope, :pericope_id, Pericope.all, :id, :titulo, {:prompt => "Selecione"}, :html => {:width => 10})%></td>
-			<td><h5>Palavra chave</h5><%= text_field_tag :search, params[:search], :size => 30%></td>
-			<td><br><%= submit_tag "Pesquisar"%> </td>
-		</tr>
-	</table>
-	<% end %>
+		
+		<% form_for :search, :url=> {:action => "search"}  do |f| %>
+		  <p>
+			<td><h5>Testamento </h5> <%= f.collection_select :testamento_id, Testamento.all, :id, :nome, :include_blank => true %></td>
+			<td><h5>Livro </h5> <%= f.collection_select :livro_id, Livro.all, :id, :nome, :include_blank => true %></td>
+			<td><h5>Capítulo </h5> </td>
+			<td><h5>Versículo </h5><%= f.text_field :versiculo_ini, :size => 7 %> - <%= f.text_field :versiculo_fin, :size => 7 %> </td>
+			<td><h5>Passagem </<%= f.text_field :pericope_id %> >
+			<td><h5>Palavra Chave </h5><%= f.text_field :keywords %> </td>
+			<td> <%= f.submit "Pesquisar" %></td>		
+		<% end %>
+	
 	</div>
 	</div>
 <p style="color: red"><%= flash[:notice] %></p>

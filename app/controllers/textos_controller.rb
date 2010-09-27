@@ -2,13 +2,16 @@ class TextosController < ApplicationController
   # GET /textos
   # GET /textos.xml
   layout "application"
-  def index
-    @textos = Texto.search(params[:search], params[:page])
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @textos }
+  
+    def search
+      if params([:search].blank?, params[:page])
+        @textos  =  Texto.all
+      else
+        @textos = Texto.search(params[:search])
+      end
+      render :index
     end
-  end
+  
 
   # GET /textos/1
   # GET /textos/1.xml

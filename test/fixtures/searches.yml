@@ -1,0 +1,17 @@
+one:
+  testamento_id: 1
+  livro_id: 1
+  capitulo: 1
+  versiculo_ini: 1
+  versiculo_ini: 1
+  pericope_id: 1
+  texto: MyText
+
+two:
+  testamento_id: 1
+  livro_id: 1
+  capitulo: 1
+  versiculo_ini: 1
+  versiculo_ini: 1
+  pericope_id: 1
+  texto: MyText

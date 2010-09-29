@@ -7,7 +7,7 @@ class TextosController < ApplicationController
       if params([:search].blank?, params[:page])
         @textos  =  Texto.all
       else
-        @textos = Texto.search(params[:search])
+        @textos = Texto.search(params[:search], params[:page])
       end
       render :index
     end

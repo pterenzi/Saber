@@ -26,18 +26,19 @@ $('#direita').corner("20px");
 	<a href="http://localhost:3000"><h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1></a>
 
 	<div id="formulario">
-		
+		<table>
+			<tr>		
 		<% form_for :search, :url=> {:action => "search"}  do |f| %>
-		  <p>
-			<td><h5>Testamento </h5> <%= f.collection_select :testamento_id, Testamento.all, :id, :nome, :include_blank => true %></td>
-			<td><h5>Livro </h5> <%= f.collection_select :livro_id, Livro.all, :id, :nome, :include_blank => true %></td>
-			<td><h5>Capítulo </h5> </td>
-			<td><h5>Versículo </h5><%= f.text_field :versiculo_ini, :size => 7 %> - <%= f.text_field :versiculo_fin, :size => 7 %> </td>
-			<td><h5>Passagem </<%= f.text_field :pericope_id %> >
-			<td><h5>Palavra Chave </h5><%= f.text_field :keywords %> </td>
-			<td> <%= f.submit "Pesquisar" %></td>		
+			<td class="form"><h5>Testamento </h5> <%= f.collection_select :testamento_id, Testamento.all, :id, :nome, :include_blank => true %></td>
+			<td class="form"><h5>Livro </h5> <%= f.collection_select :livro_id, Livro.all, :id, :nome, :include_blank => true %></td>
+			<td class="form"><h5>Capítulo </h5><%= f.text_field :capitulo, :size => 9 %> </td>
+			<td class="form"><h5>Verso inicial</h5><%= f.text_field :versiculo_ini, :size => 9 %></td><td class="form"><h5>Verso final</h5><%= f.text_field :versiculo_fin, :size => 9 %> </td>
+			<td class="form"><h5>Passagem </h5><%= f.text_field :pericope_id %></td>
+			<td class="form"><h5>Palavra Chave </h5><%= f.text_field :keywords %> </td>
+			<td class="form"> <%= f.submit "Pesquisar" %></td>		
 		<% end %>
-	
+			</tr>
+		</table>
 	</div>
 	</div>
 <p style="color: red"><%= flash[:notice] %></p>

@@ -27,11 +27,11 @@ class Texto < ActiveRecord::Base
     end
 
     def versiculo_ini_conditions
-      ["textos.versiculo = ?", @versiculo_ini] unless @versiculo_ini.blank?
+      ["textos.versiculo >= ?", @versiculo_ini] unless @versiculo_ini.blank?
     end
     
     def versiculo_fin_conditions
-       ["textos.versiculo >= ?", @versiculo_fin] unless @versiculo_fin.blank?
+       ["textos.versiculo <= ?", @versiculo_fin] unless @versiculo_fin.blank?
      end
 
     def testamento_conditions

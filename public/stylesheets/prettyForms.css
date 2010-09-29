@@ -42,6 +42,13 @@ a:hover {
     text-decoration:none;
 }
 
+td.form {
+	vertical-align: bottom;
+	padding:10px;
+	border:0px;
+
+}
+
 
 td.texto {
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
@@ -170,7 +177,6 @@ tr.odd {
 	width:100%;
 	float:center;
 	border-bottom:1px solid black;
-	padding:8px;
 	background-color:white;	
 }
 
@@ -197,7 +203,7 @@ select{
 	padding:0px 3px;
 	font:70%/140% "Trebuchet MS", "Lucida Grande", "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
 	color:#666666;
-	width:200px;
+	width:150px;
 }
 
 label{

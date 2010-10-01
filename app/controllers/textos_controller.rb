@@ -1,17 +1,24 @@
 class TextosController < ApplicationController
   # GET /textos
   # GET /textos.xml
-  layout "application"
   
-    def search
-      if params([:search].blank?, params[:page])
-        @textos  =  Texto.all
-      else
-        @textos = Texto.search(params[:search], params[:page])
-      end
-      render :index
+  def search
+    if params[:search].blank?
+      @textos  =  Texto.all(:limit=>100).paginate(:per_page => 10, :page => params[:page])
+    else
+      @textos = Texto.find(params[:search]).paginate(:per_page => 10, :page => params[:page])
     end
-  
+    render :index
+  end
+
+  def index
+    @textos = Texto.all(:limit=>100).paginate(:per_page => 10, :page => params[:page])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @textos }
+    end
+  end
+
 
   # GET /textos/1
   # GET /textos/1.xml

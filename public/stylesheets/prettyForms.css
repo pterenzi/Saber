@@ -193,7 +193,8 @@ input, textarea{
 	border:0;
 	margin:3px;
 	padding:0px 3px;
-	font:90%/180% "Trebuchet MS", "Lucida Grande", "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
+	height:18px;
+	font:90% "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color:#666666;
 }
 
@@ -272,6 +273,7 @@ label{
 	float:left;
 	font-weight:bold;
 	cursor:pointer;
+	height:18px;
 }
 
 .frmShdwSubmit:hover{

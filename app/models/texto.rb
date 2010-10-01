@@ -2,19 +2,17 @@ class Texto < ActiveRecord::Base
   belongs_to :testamento, :foreign_key => "testamento_id"
   belongs_to :livro, :foreign_key => "livro_id"
   belongs_to :pericope, :foreign_key => "pericope_id"
-  
-  
-  def search(params, page)
-        @keywords = params[:keywords]
-        @testamento_id = params[:testamento_id]
-        @livro_id = params[:livro_id]
-        @pericope_id = params[:pericope_id]
-        @capitulo = params[:capitulo]
-        @versiculo_ini = params[:versiculo_ini]
-        @versiculo_fin = params[:versiculo_fin]
-        paginate :per_page => 50, :page => page,
-        Texto.all(:conditions => conditions)
-    end
+
+  def search(params)
+      @keywords = params[:keywords]
+      @testamento_id = params[:testamento_id]
+      @livro_id = params[:livro_id]
+      @pericope_id = params[:pericope_id]
+      @capitulo = params[:capitulo]
+      @versiculo_ini = params[:versiculo_ini]
+      @versiculo_fin = params[:versiculo_fin]
+      Texto.all(:conditions => conditions)
+  end
 
   private
 
@@ -27,11 +25,11 @@ class Texto < ActiveRecord::Base
     end
 
     def versiculo_ini_conditions
-      ["textos.versiculo >= ?", @versiculo_ini] unless @versiculo_ini.blank?
+      ["textos.versiculo = ?", @versiculo_ini] unless @versiculo_ini.blank?
     end
-    
+
     def versiculo_fin_conditions
-       ["textos.versiculo <= ?", @versiculo_fin] unless @versiculo_fin.blank?
+       ["textos.versiculo >= ?", @versiculo_fin] unless @versiculo_fin.blank?
      end
 
     def testamento_conditions
@@ -42,10 +40,6 @@ class Texto < ActiveRecord::Base
       ["textos.livro_id = ?", @livro_id] unless @livro_id.blank?
     end
 
-    def pericope_conditions
-      ["textos.pericope_id = ?", @pericope_id] unless @pericope_id.blank?
-    end
-    
     def conditions
       [conditions_clauses.join(' AND '), *conditions_options]
     end
@@ -62,5 +56,5 @@ class Texto < ActiveRecord::Base
       private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
     end
 
-  
+
 end

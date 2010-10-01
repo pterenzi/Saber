@@ -2,7 +2,7 @@
 <% testamento_anterior = '' %>
 <% livro_anterior = '' %>
 <% @textos.each do |texto| %>
-  <% if texto.testamento.nome != testamento_anterior %> 
+  <% if texto.testamento.nome != testamento_anterior %>
  <br><h2> <%=h texto.testamento.nome %> Testamento</h2>
     <% testamento_anterior = texto.testamento.nome %>
    <% end %>
@@ -11,7 +11,7 @@
      <% livro_anterior = texto.livro.nome %>
   <% end %>
 <table cellspacing="0" cellpadding="0" border="0">
-	<tr class="<%= cycle("even", "odd") %>">
+  <tr class="<%= cycle("even", "odd") %>">
 <td class="numero" width="38px"><%= tooltip (link_to texto.capitulo, texto), { :tooltip => 'Clique para ler o capítulo inteiro.' }, :class => 'mytooltip'%>:<%=h texto.versiculo %></td> <td class="texto" width="700px"> <%= link_to texto.texto, texto  %></td>
 </tr>
 </table>

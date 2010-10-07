@@ -18,7 +18,7 @@ body {
 	text-align:justify;
 }
 
-td.texto {
+td.verse {
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color:#2e3436;
 	outline:none;
@@ -83,7 +83,7 @@ tr.odd {
 	vertical-align:top;
 }
 
-#texto {
+#verse {
 	width: 93%;
 	float: right ;
 

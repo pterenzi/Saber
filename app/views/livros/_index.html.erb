@@ -1,9 +1,0 @@
-
-<% testamento_anterior = '' %>
-<% @textos.each do |texto| %>
- <% if texto.testamento.nome != testamento_anterior %> 
-<br><br><h4> <%=h texto.testamento.nome %> Testamento</h4>
-   <% testamento_anterior = texto.testamento.nome %>
-  <% end %>
-    <%= tooltip (link_to texto.livro.nome), { :tooltip => 'Clique para ler o livro.' }, :class => 'mytooltip'%>, 
-<% end %>

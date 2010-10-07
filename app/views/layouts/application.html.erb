@@ -30,11 +30,11 @@ $('#direita').corner("20px");
 		<table>
 			<tr>		
 		<% form_for :search, :url=> {:action => "search"}  do |f| %>
-			<td class="form"><h5>Testamento </h5> <%= f.collection_select :testamento_id, Testamento.all, :id, :nome, {:prompt => 'Selecione'} %></td>
-			<td class="form"><h5>Livro </h5> <%= f.collection_select :livro_id, Livro.all, :id, :nome, {:prompt => 'Selecione'} %></td>
-			<td class="form"><h5>Capítulo </h5><%= f.text_field :capitulo, :size => 9 %> </td>
-			<td class="form"><h5>Verso inicial</h5><%= f.text_field :versiculo_ini, :size => 9 %></td><td class="form"><h5>Verso final</h5><%= f.text_field :versiculo_fin, :size => 9 %> </td>
-			<td class="form"><h5>Passagem </h5><%= f.text_field :pericope_id %></td>
+			<td class="form"><h5>Testament </h5> <%= f.collection_select :testament_id, Testament.all, :id, :name, {:prompt => 'Selecione'} %></td>
+			<td class="form"><h5>Book </h5> <%= f.collection_select :book_id, Book.all, :id, :name, {:prompt => 'Selecione'} %></td>
+			<td class="form"><h5>Capítulo </h5><%= f.text_field :chapter, :size => 9 %> </td>
+			<td class="form"><h5>Verso inicial</h5><%= f.text_field :verse_ft, :size => 9 %></td><td class="form"><h5>Verso final</h5><%= f.text_field :verse_lt, :size => 9 %> </td>
+			<td class="form"><h5>Passagem </h5><%= f.text_field :passage_id %></td>
 			<td class="form"><h5>Palavra Chave </h5><%= f.text_field :keywords, :size => 20 %> </td>
 			<td class="form"> <%= f.submit "Pesquisar" %></td>		
 		<% end %>

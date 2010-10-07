@@ -50,7 +50,7 @@ td.form {
 }
 
 
-td.texto {
+td.verse {
 	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	color:#2e3436;
 	outline:none;
@@ -137,12 +137,10 @@ tr.odd {
 }
 
 #container {
-	padding:20px;
 	width:60%;
-	margin-left:20%;
-	margin-top:64px;
-}
-
+	margin-left:24%;
+	margin-top:75px;
+}	
 #esquerda {
 	width: 20%;
 	left:0;
@@ -168,7 +166,7 @@ tr.odd {
 	vertical-align:top;
 }
 
-#texto {
+#verse {
 	width: 100%;
 	float: right ;
 }

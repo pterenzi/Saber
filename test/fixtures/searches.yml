@@ -1,17 +1,17 @@
 one:
-  testamento_id: 1
-  livro_id: 1
-  capitulo: 1
-  versiculo_ini: 1
-  versiculo_ini: 1
-  pericope_id: 1
-  texto: MyText
+  testament_id: 1
+  book_id: 1
+  chapter: 1
+  verse_ft: 1
+  verse_ft: 1
+  passage_id: 1
+  verse: MyText
 
 two:
-  testamento_id: 1
-  livro_id: 1
-  capitulo: 1
-  versiculo_ini: 1
-  versiculo_ini: 1
-  pericope_id: 1
-  texto: MyText
+  testament_id: 1
+  book_id: 1
+  chapter: 1
+  verse_ft: 1
+  verse_ft: 1
+  passage_id: 1
+  verse: MyText

@@ -1,16 +1,16 @@
-class CreateTextos < ActiveRecord::Migration
+class CreateVerses < ActiveRecord::Migration
   def self.up
-    create_table :textos do |t|
-      t.integer :livro_id
-      t.integer :pericope_id
-      t.integer :capitulo
-      t.integer :versiculo
+    create_table :verses do |t|
+      t.integer :book_id
+      t.integer :passage_id
+      t.integer :chapter
+      t.integer :verse_number
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :textos
+    drop_table :verses
   end
 end

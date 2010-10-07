@@ -1,15 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :searches
 
-  map.resources :pericopes
+  map.resources :passages
 
-  map.resources :textos
+  map.resources :verses
 
-  map.resources :livros
+  map.resources :books
 
-  map.resources :testamentos
+  map.resources :testaments
   
-  map.root :controller => "textos", :action=>"index"
+  map.root :controller => "verses", :action=>"search"
   
   # The priority is based upon order of creation: first created -> highest priority.
 

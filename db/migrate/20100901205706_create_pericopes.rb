@@ -1,18 +1,18 @@
-class CreatePericopes < ActiveRecord::Migration
+class CreatePassages < ActiveRecord::Migration
   def self.up
-    create_table :pericopes do |t|
-      t.integer :livro_id
+    create_table :passages do |t|
+      t.integer :book_id
       t.integer :cap_inicial
       t.integer :ver_ini
       t.integer :cap_final
       t.integer :ver_final
-      t.string :titulo
+      t.string :title
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :pericopes
+    drop_table :passages
   end
 end

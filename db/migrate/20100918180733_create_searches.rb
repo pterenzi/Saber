@@ -1,13 +1,13 @@
 class CreateSearches < ActiveRecord::Migration
   def self.up
     create_table :searches do |t|
-      t.integer :testamento_id
-      t.integer :livro_id
-      t.integer :capitulo
-      t.integer :versiculo_ini
-      t.integer :versiculo_fin
-      t.integer :pericope_id
-      t.text :texto
+      t.integer :testament_id
+      t.integer :book_id
+      t.integer :chapter
+      t.integer :verse_ft
+      t.integer :verse_lt
+      t.integer :passage_id
+      t.text :verse
       t.timestamps
     end
   end

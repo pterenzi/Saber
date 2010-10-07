@@ -9,27 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100921043143) do
+ActiveRecord::Schema.define(:version => 20101006044113) do
 
-  create_table "livros", :force => true do |t|
-    t.integer  "testamento_id"
-    t.string   "nome"
+  create_table "books", :force => true do |t|
+    t.integer  "testament_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pericopes", :force => true do |t|
-    t.integer  "testamento_id"
-    t.integer  "livro_id"
-    t.integer  "cap_inicial"
-    t.integer  "cap_final"
-    t.integer  "ver_ini"
-    t.integer  "ver_final"
-    t.string   "titulo"
-    t.string   "referencia_1"
-    t.string   "referencia_2"
-    t.string   "referencia_3"
-    t.string   "referencia_4"
+  create_table "passages", :force => true do |t|
+    t.integer  "testament_id"
+    t.integer  "book_id"
+    t.integer  "chapter_ft"
+    t.integer  "chapter_lt"
+    t.integer  "verse_ft"
+    t.integer  "verse_lt"
+    t.string   "title"
+    t.string   "reference_1"
+    t.string   "reference_2"
+    t.string   "reference_3"
+    t.string   "reference_4"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,21 +46,21 @@ ActiveRecord::Schema.define(:version => 20100921043143) do
     t.datetime "updated_at"
   end
 
-  create_table "testamentos", :force => true do |t|
-    t.string   "nome"
+  create_table "testaments", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "textos", :force => true do |t|
-    t.integer  "livro_id"
-    t.integer  "pericope_id"
-    t.integer  "capitulo"
-    t.integer  "versiculo"
+  create_table "verses", :force => true do |t|
+    t.integer  "book_id"
+    t.integer  "passage_id"
+    t.integer  "chapter_number"
+    t.integer  "verse_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "texto"
-    t.integer  "testamento_id"
+    t.text     "verse"
+    t.integer  "testament_id"
   end
 
 end

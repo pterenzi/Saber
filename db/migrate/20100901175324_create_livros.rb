@@ -1,14 +1,14 @@
-class CreateLivros < ActiveRecord::Migration
+class CreateBooks < ActiveRecord::Migration
   def self.up
-    create_table :livros do |t|
-      t.integer :testamento_id
-      t.string :nome
+    create_table :books do |t|
+      t.integer :testament_id
+      t.string :name
 
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :livros
+    drop_table :books
   end
 end

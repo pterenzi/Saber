@@ -1,9 +1,9 @@
-class AddColumnTexto < ActiveRecord::Migration
+class AddColumnVerse < ActiveRecord::Migration
   def self.up
-    add_column :textos, :texto, :text
+    add_column :verses, :verse, :text
   end
 
   def self.down
-    remove_column :textos, :texto
+    remove_column :verses, :verse
   end
 end

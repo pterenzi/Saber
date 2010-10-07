@@ -2,5 +2,4 @@
 log/*.log
 tmp/**/*
 config/database.yml
-db/saber_development
 db/saber_test

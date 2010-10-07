@@ -1,39 +1,39 @@
 class Search < ActiveRecord::Base
-  def textos
-    @textos ||= find_textos
+  def verses
+    @verses ||= find_verses
   end
 
   private
 
-  def find_textos
-    Texto.find(:all, :conditions => conditions)
+  def find_verses
+    Verse.find(:all, :conditions => conditions)
   end
-  def texto_conditions
-    ["textos.texto LIKE ?", "%#{texto}%"] unless texto.blank?
-  end
-
-  def testamento_conditions
-    ["textos.testamento_id = ?", testamento_id] unless testamento_id.blank?
+  def verse_conditions
+    ["verses.verse LIKE ?", "%#{verse}%"] unless verse.blank?
   end
 
-  def livro_conditions
-    ["textos.livro_id = ?", livro_id] unless livro_id.blank?
+  def testament_conditions
+    ["verses.testament_id = ?", testament_id] unless testament_id.blank?
   end
 
-  def pericope_conditions
-    ["textos.pericope.id = ?", pericope_id] unless pericope_id.blank?
+  def book_conditions
+    ["verses.book_id = ?", book_id] unless book_id.blank?
   end
 
-  def capitulo_conditions
-    ["textos.capitulo = ?", capitulo] unless capitulo.blank?
+  def passage_conditions
+    ["verses.passage.id = ?", passage_id] unless passage_id.blank?
+  end
+
+  def chapter_conditions
+    ["verses.chapter = ?", chapter] unless chapter.blank?
   end
   
-  def versiculo_ini_conditions
-    ["textos.versiculo_ini = ?", versiculo_ini] unless versiculo_ini.blank?
+  def verse_ft_conditions
+    ["verses.verse_ft = ?", verse_ft] unless verse_ft.blank?
   end
   
-  def versiculo_fin_conditions
-    ["textos.versiculo_fin = ?", versiculo_fin] unless versiculo_fin.blank?
+  def verse_lt_conditions
+    ["verses.verse_lt = ?", verse_lt] unless verse_lt.blank?
   end
   
   def conditions

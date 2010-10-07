@@ -3,32 +3,32 @@
 <% form_for @search do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :testamento_id %><br />
-    <%= f.text_field :testamento_id %>
+    <%= f.label :testament_id %><br />
+    <%= f.text_field :testament_id %>
   </p>
   <p>
-    <%= f.label :livro_id %><br />
-    <%= f.text_field :livro_id %>
+    <%= f.label :book_id %><br />
+    <%= f.text_field :book_id %>
   </p>
   <p>
-    <%= f.label :capitulo %><br />
-    <%= f.text_field :capitulo %>
+    <%= f.label :chapter %><br />
+    <%= f.text_field :chapter %>
   </p>
   <p>
-    <%= f.label :versiculo_ini %><br />
-    <%= f.text_field :versiculo_ini %>
+    <%= f.label :verse_ft %><br />
+    <%= f.text_field :verse_ft %>
   </p>
   <p>
-    <%= f.label :versiculo_fin %><br />
-    <%= f.text_field :versiculo_fin %>
+    <%= f.label :verse_lt %><br />
+    <%= f.text_field :verse_lt %>
   </p>
   <p>
-    <%= f.label :pericope_id %><br />
-    <%= f.text_field :pericope_id %>
+    <%= f.label :passage_id %><br />
+    <%= f.text_field :passage_id %>
   </p>
   <p>
-    <%= f.label :texto %><br />
-    <%= f.text_area :texto %>
+    <%= f.label :verse %><br />
+    <%= f.text_area :verse %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

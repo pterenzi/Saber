@@ -1,0 +1,9 @@
+
+<% testament_anterior = '' %>
+<% @verses.each do |verse| %>
+ <% if verse.testament.name != testament_anterior %> 
+<br><br><h4> <%=h verse.testament.name %> Testament</h4>
+   <% testament_anterior = verse.testament.name %>
+  <% end %>
+    <%= tooltip (link_to verse.book.name), { :tooltip => 'Clique para ler o book.' }, :class => 'mytooltip'%>, 
+<% end %>

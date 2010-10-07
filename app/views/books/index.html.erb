@@ -1,0 +1,19 @@
+<h1>Books</h1>
+<div id="container">
+<% testament_anterior = '' %>
+
+
+<% @books.each do |book| %>
+ <% if book.testament.name != testament_anterior %> 
+<br><h2> <%=h book.testament.name %> Testament</h2>
+   <% testament_anterior = book.testament.name %>
+  <% end %>
+<table>
+<tr>
+    <td><%=h book.name %></td>
+<% end %>
+  </tr>
+
+</table>
+</div>
+<br />

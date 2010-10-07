@@ -1,0 +1,16 @@
+<h1>Editing testament</h1>
+
+<% form_for(@testament) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @testament %> |
+<%= link_to 'Back', testaments_path %>

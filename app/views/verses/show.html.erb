@@ -1,0 +1,24 @@
+<div id="container">
+	<br>
+<p>
+   <h2> <%=h @verse.testament.name %> testament</h2>
+</p>
+
+<p>
+ <h3> <%=h @verse.book.name %></h3> 
+</p>
+
+<p>
+ <h4><%=h @verse.passage.title %></h4>
+<table>
+	<tr>
+		<td class="numero">  
+<%=h @verse.chapter %>:<%=h @verse.verse_number %></td><td class="verse"> <%=h @verse.verse %></td></tr></table>
+</p>
+
+
+<br>
+
+<%= link_to 'Edit', edit_verse_path(@verse) %> |
+<%= link_to 'Back', verses_path %>
+</div>

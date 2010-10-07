@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  book_id: 1
+  cap_inicial: 1
+  ver_ini: 1
+  cap_final: 1
+  ver_final: 1
+  titulo: MyString
+
+two:
+  book_id: 1
+  cap_inicial: 1
+  ver_ini: 1
+  cap_final: 1
+  ver_final: 1
+  titulo: MyString

@@ -1,0 +1,25 @@
+<div id="container">
+<% testament_anterior = '' %>
+<% book_anterior = '' %>
+<% @verses.each do |verse| %>
+  <% if verse.testament.name != testament_anterior %>
+ <br><h2> <%=h verse.testament.name %> Testamento</h2>
+    <% testament_anterior = verse.testament.name %>
+   <% end %>
+   <% if book_anterior != verse.book.name %>
+     <h3> <%= tooltip (link_to verse.book.name, verse), { :tooltip => 'Clique para ler o livro.' }, :class => 'mytooltip'%> </h3>
+     <% book_anterior = verse.book.name %>
+  <% end %>
+<table cellspacing="0" cellpadding="0" border="0">
+  <tr class="<%= cycle("even", "odd") %>">
+<td class="numero" width="38px"><%= tooltip (link_to verse.chapter_number, verse), { :tooltip => 'Clique para ler o capítulo inteiro.' }, :class => 'mytooltip'%>:<%=h verse.verse_number %></td> <td class="verse" width="700px"> <%= link_to verse.verse, verse  %></td>
+</tr>
+</table>
+<% end %>
+
+<br />
+
+</div>
+<div class="flickr_pagination">
+<%= will_paginate @verses, options = { :previous_label => "◀", :next_label => "▶"}%>
+</div>

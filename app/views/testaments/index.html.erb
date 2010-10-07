@@ -1,0 +1,18 @@
+<h1>Testaments</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+  </tr>
+
+<% @testaments.each do |testament| %>
+  <tr>
+    <td><strong><%=h testament.name %></strong></td>
+    <td><%= link_to 'Show', testament %></td>
+    <td><%= link_to 'Edit', edit_testament_path(testament) %></td>
+    <td><%= link_to 'Destroy', testament, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Verses: <%= controller.action_name %></title>
+
+<%= stylesheet_link_tag 'awesome-buttons' %>
+<%= stylesheet_link_tag 'prettyForms' %>
+<%= stylesheet_link_tag 'jquery-ui-1.8.4.custom' %>
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag 'paginate' %>
+<%= javascript_include_tag 'prettyForms.js' %>
+<%= javascript_include_tag 'jquery.corner.js' %>
+<%= javascript_include_tag 'jrails.autocomplete.js' %>
+<%= javascript_include_tag 'jrails.ui.autocomplete.js' %>
+<script type="text/javascript">
+
+
+</script>
+
+</head>
+<body onload="prettyForms()">
+	<div id="topo">
+	<h1>SABER - Sistema Avançado de Busca e Estudo de Referências</h1>
+	<div id="formulario">
+
+		<% form_for :search, :url=> {:action => "search"}  do |f| %>
+		<table>
+			<tr>
+			<td class="form"><h5>Testamento </h5><%= text_field_with_auto_complete :testament_id, :testament_name, { :size => 10 }, { :url => formatted_testaments_path(:js), :method => :get, :param_name => 'search' } %></td>
+			<td class="form"><h5>Livro </h5> <%= text_field_with_auto_complete :book_id, :book_name, { :size => 20 }, { :url => formatted_books_path(:js), :method => :get, :param_name => 'search' } %></td>
+			<td class="form"><h5>Capítulo </h5><%= f.text_field :chapter_number, :size => 7 %> </td>
+			<td class="form"><h5>Verso inicial</h5><%= f.text_field :verse_ft, :size => 7 %></td>
+			<td class="form"><h5>Verso final</h5><%= f.text_field :verse_lt, :size => 7 %> </td>
+			<td class="form"><h5>Passagem </h5><%= text_field_with_auto_complete :passage_id, :passage_title, { :size => 40 }, { :url => formatted_passages_path(:js), :method => :get, :param_name => 'search' } %></td>
+			<td class="form"><h5>Palavra Chave </h5><%= f.text_field :keywords, :size => 15 %> </td>
+			<td class="form"> <%= f.submit "Pesquisar" %></td>
+			</tr>		
+		</table>
+		<% end %>
+	</div>
+	</div>
+
+<p style="color: red"><%= flash[:notice] %></p>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  book_id: 1
+  passage_id: 1
+  chapter: 1
+  verse_number: 1
+
+two:
+  book_id: 1
+  passage_id: 1
+  chapter: 1
+  verse_number: 1

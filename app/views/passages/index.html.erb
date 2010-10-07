@@ -1,0 +1,33 @@
+<h1>Passagens</h1>	
+<div id="container">
+	<% testament_anterior = '' %>
+	<% book_anterior = '' %>
+	<% @passages.each do |passage| %>
+	  <% if passage.testament.name != testament_anterior %> 
+	 <br><h2> <%=passage.testament.name %> Testament</h2>
+	    <% testament_anterior = passage.testament.name %>
+	   <% end %>
+	   <% if book_anterior != passage.book.name %>
+	     <h3> <%= tooltip (link_to passage.book.name, passage), { :tooltip => 'Clique para ler o livro.' }, :class => 'mytooltip'%> </h3>
+	     <% book_anterior = passage.book.name %>
+	  <% end %>
+
+<table cellspacing="0" cellpadding="0" border="0">
+ <tr class="<%= cycle("even", "odd") %>">
+    <td class="numero" width="80px"><%= passage.id%><br><%=h passage.cap_inicial %>:<%=h passage.ver_ini %> a <%=h passage.cap_final %>:<%=h passage.ver_final %></td>
+    <td class="verse"><%=h passage.title %></td>
+<td class="ref"><%= tooltip (link_to passage.referencia_1, passage), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br>
+<%= tooltip (link_to passage.referencia_2, passage), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br> 
+<%= tooltip (link_to passage.referencia_3, passage), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> <br>
+<%= tooltip (link_to passage.referencia_4, passage), { :tooltip => 'Clique para ler esta referência.' }, :class => 'mytooltip'%> </td>
+<!--    <td><%= link_to 'Show', passage %></td>
+    <td><%= link_to 'Edit', edit_passage_path(passage) %></td>
+    <td><%= link_to 'Destroy', passage, :confirm => 'Are you sure?', :method => :delete %></td>-->
+  </tr>
+</table>
+<% end %>
+</div>
+<div class="flickr_pagination">
+<%= will_paginate @verses, options = { :prev_label => "◀", :next_label => "▶"}%>
+</div>
+

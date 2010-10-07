@@ -1,0 +1,13 @@
+<p>
+  <b>Testament:</b>
+  <%=h @book.testament_id %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%=h @book.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

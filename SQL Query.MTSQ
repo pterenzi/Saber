@@ -1,0 +1,1 @@
+SELECT idFROM passages inner join versesonverses.book_id = passages.book_idverses.chapter_number between passages.chapter_ft and passages.chapter_lt and verses.verse_number between passages.verse_ft and passages.verse_lt
